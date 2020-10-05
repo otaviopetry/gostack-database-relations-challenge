@@ -21,8 +21,6 @@ class CreateProductService {
   public async execute({ name, price, quantity }: IRequest): Promise<Product> {
     const productExists = await this.productsRepository.findByName(name);
 
-    console.log(`${productExists} -> productExists`);
-
     if (productExists) {
       throw new AppError(
         'A product with this exact name is already registered.',
@@ -34,8 +32,6 @@ class CreateProductService {
       price,
       quantity,
     });
-
-    console.log(`Service product -> ${product}`);
 
     return product;
   }
