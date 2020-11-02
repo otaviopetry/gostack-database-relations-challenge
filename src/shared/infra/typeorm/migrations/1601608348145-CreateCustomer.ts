@@ -37,7 +37,7 @@ export default class CreateCustomer1601608348145 implements MigrationInterface {
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<any> {
+  public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('customers');
   }
 }
